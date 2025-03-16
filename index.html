@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHP Form Handling</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Registration Form</h2>
+      <form action="process.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <span class="error">
+          <?php echo $_REQUEST['name_error'] ?? ''; ?>
+        </span>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
+        <span class="error">
+          <?php echo $_REQUEST['email_error'] ?? ''; ?>
+        </span>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" />
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password" />
+        <span class="error">
+          <?php echo $_REQUEST['password_error'] ?? ''; ?>
+        </span>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
